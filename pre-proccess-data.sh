@@ -1,4 +1,4 @@
-# Substituim les sigles pel seu significat per fer el fitxer llegible als humans.
+# Rename acronyms by human readable expressions with sed
 sed -E '{
 # Sex: sex of the patient [M: Male, F: Female]
 s/,F,/,Female,/g
@@ -21,14 +21,14 @@ s/,Down,/,downsloping,/g
 
 }' heart.csv > heart_temp.csv
 
-# Separem en dos fitxers tamporals per sexe (Female i Male)
+# Separate in two individual files by gender (Female i Male)
 file_by_gender(){
 grep -E '*,Female,*' $1 > heart_women.csv
 grep -E '*,Male,*' $1 > heart_men.csv
 }
 
-# Invoquem a la funció passant per paràmetre el tmp file.
+# Call file_by_gender function with file name parameter
 file_by_gender heart_temp.csv
 
-# Una vegada realitzades les transformacions i separats els fitxers esborrem el temporal.
+# Remove temporal file
 rm heart_temp.csv

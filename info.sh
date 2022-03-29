@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Mostrem la info per defecte si executem ./a.sh
+# Display default information: ./a.sh
 default_info(){
 	echo ---------
 	echo Numero de linies:
@@ -12,11 +12,11 @@ default_info(){
 	echo ---------
 }
 
-# Descomprimim el dataset, si ja existeix l' actualitza.
+# Unzip dataset, update if exists.
 echo Descomprimint ...
 unzip -u archive.zip
 
-# Mostrem la info detallada si executem ./a.sh -v
+# Display detail info (add -v argument): ./a.sh -v
 while getopts "v" option; do
 	case "${option}" in
 		v) 

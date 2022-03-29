@@ -1,5 +1,7 @@
 BEGIN {
         FS=",";
+		
+		# Initialize variables
         totWomen = 0;
         totWomen_1 = 0;
 		totWomenAge=0;
@@ -25,6 +27,7 @@ BEGIN {
 		#fileName="heart_women.csv";
 }
 {
+	# Calculate women stats
 	if($2 ~ /Female/){
 		totWomen += 1;
 		
@@ -55,6 +58,8 @@ BEGIN {
 }
 END {
 	#printf("Gender,Avg.Age,MaxAge,MinAge,Avg.AgeASY,Avg.AgeTA,Avg.MaxHR,Avg.Cholesterol,Avg.RestingBP,TotalWomen,TotalWomen_1,%Women_1")
+	
+	# Display results
 	printf "W,";
 	printf("%.2f", (totWomenAge / totWomen_1  ));
 	printf ",";

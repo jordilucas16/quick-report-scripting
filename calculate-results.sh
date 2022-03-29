@@ -18,7 +18,7 @@ echo "<style>table, th, td {border:1px solid black;}td {padding-left: 60px;}</st
 
 while IFS=, read -r col1 col2 col3 col4 col5 col6 col7 col8 col9 col10 col11 col12
 	do	 
-			# Introduim les dades per Homes en un array
+			# Data men into array
 			if [[ $col1 == "M" ]]; then				
 				men[${#men[@]}]=$col2
 				men[${#men[@]}]=$col3	
@@ -32,7 +32,7 @@ while IFS=, read -r col1 col2 col3 col4 col5 col6 col7 col8 col9 col10 col11 col
 				men[${#men[@]}]=$col11	
 				men[${#men[@]}]=$col12	
 				
-			# Introduim les dades per Dones en un array
+			# Data women into array
 			elif [[ $col1 == "W" ]]; then				
 				women[${#women[@]}]=$col2
 				women[${#women[@]}]=$col3	
@@ -49,25 +49,25 @@ while IFS=, read -r col1 col2 col3 col4 col5 col6 col7 col8 col9 col10 col11 col
 			
 	done < "$INPUT_1"
 
-# Funció que crea un titol h3 amb el parámetre enviat
+# Create a h3 headline
 function h3(){
 	echo "<h3>$1</h3>"
 }
-# Funció que crea una taula html
+# Create a html table
 function create_table(){
 	echo "<table style='width:100%'>"
 }
-# Funció que inserta el header de la taula amb les columnes
+# Insert headers into first row table
 function header(){
 	echo "<tr><th>Avg.Age</th><th>MaxAge</th><th>MinAge</th><th>Avg.AgeASY</th><th>Avg.AgeTA</th><th>Avg.MaxHR</th><th>Avg.Cholesterol</th>" \
 		 "<th>Avg.RestingBP</th><th>TotalPatients</th><th>TotalPatients_1</th><th>%Patients_1</th></tr>"
 }
-# Funció que finalitza una taula html
+# Close a html row and table
 function end_table(){
 	echo "</tr></table>"
 }
 
-# Mostrem les dades relatives a génere Home
+# Show men data
 h3 "Homes:"
 create_table
 header
@@ -80,7 +80,7 @@ for i in "${men[@]}";
 	done
 end_table
 
-# Mostrem les dades relatives a génere Dona
+# Show women data
 h3 "Dones:"
 create_table
 header
@@ -95,7 +95,7 @@ end_table
 
 echo "<br><br><br><br>"
 
-# Calculem la diferència entre els resultats de homes i dones
+# Calculate results between men and women
 h3 "Diferència resultats Homes-Dones:"
 create_table
 header
@@ -117,7 +117,7 @@ for i in "${!men[@]}"; do
 done
 end_table
 
-# Mostrem la llegenda explicativa
+# show the info features legend
 echo "<br><br>"
 h3 "Llegenda"
 echo "<b>Avg.Age:</b>Edat mitja del pacient afectat<br>"
