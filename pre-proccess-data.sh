@@ -21,7 +21,7 @@ s/,Down,/,downsloping,/g
 
 }' heart.csv > heart_temp.csv
 
-# Separate in two individual files by gender (Female i Male)
+# Separate in two individual files by gender (Female and Male)
 file_by_gender(){
 grep -E '*,Female,*' $1 > heart_women.csv
 grep -E '*,Male,*' $1 > heart_men.csv

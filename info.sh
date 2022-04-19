@@ -3,7 +3,7 @@
 # Display default information: ./info.sh
 default_info(){
 	echo ---------
-	echo Lines number:
+	echo Lines number/filename:
 	wc -l heart.csv
 	echo Columns number:
 	head -1 heart.csv | sed 's/[^,]//g' | wc -c
