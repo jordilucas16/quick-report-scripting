@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Display default information: ./a.sh
+# Display default information: ./info.sh
 default_info(){
 	echo ---------
 	echo Lines number:
@@ -16,7 +16,7 @@ default_info(){
 echo Unziping ...
 unzip -u archive.zip
 
-# Display detail info (add -v argument): ./a.sh -v
+# Display detail info (add -v argument): ./info.sh -v
 while getopts "v" option; do
 	case "${option}" in
 		v) 
