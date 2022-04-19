@@ -68,9 +68,11 @@ function calculate_avg(){
 max_age=$(printf "%d\n" "${age[@]}" | sort -n | tail -1)
 min_age=$(printf "%d\n" "${age[@]}" | sort -n -r | tail -1)
 
-# Columns Gender,Avg.Age,MaxAge,MinAge,Avg.AgeASY,Avg.AgeTA,Avg.MaxHR,Avg.Cholesterol,Avg.RestingBP,TotalMen,TotalMen_1,%Men_1
+# Columns Gender,Avg.Age,MaxAge,MinAge,Avg.AgeASY,Avg.AgeTA,Avg.MaxHR,Avg.Cholesterol,Avg.RestingBP,
+# TotalMen,TotalMen_1,%Men_1
 echo M,$(calculate_avg "${age[@]}"),$max_age,$min_age,$(calculate_avg "${asy[@]}"),$(calculate_avg "${ta[@]}"), 	\
-	 $(calculate_avg "${maxhr[@]}"),$(calculate_avg "${chol[@]}"),$(calculate_avg "${restbp[@]}"),$men,$men_1,$(( $men_1*100/$men | bc -l )) > results.csv 
+	 $(calculate_avg "${maxhr[@]}"),$(calculate_avg "${chol[@]}"),$(calculate_avg "${restbp[@]}"),$men,$men_1,  \
+	 $(( $men_1*100/$men | bc -l )) > results.csv
 
 else 
 	echo "File $1 Not Found"

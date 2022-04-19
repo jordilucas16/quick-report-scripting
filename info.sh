@@ -3,28 +3,29 @@
 # Display default information: ./a.sh
 default_info(){
 	echo ---------
-	echo Numero de linies:
+	echo Lines number:
 	wc -l heart.csv
-	echo Numero de columnes:
+	echo Columns number:
 	head -1 heart.csv | sed 's/[^,]//g' | wc -c
-	echo Nom de les Columnes:
+	echo Columns name:
 	head -1 heart.csv
 	echo ---------
 }
 
 # Unzip dataset, update if exists.
-echo Descomprimint ...
+echo Unziping ...
 unzip -u archive.zip
 
 # Display detail info (add -v argument): ./a.sh -v
 while getopts "v" option; do
 	case "${option}" in
 		v) 
-			echo URL Descarrega:
+			echo Download URL:
 			pwd
 			echo Format:
 			file -i heart.csv
 	esac
 done
 
+# Call function
 default_info

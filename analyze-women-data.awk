@@ -57,7 +57,8 @@ BEGIN {
 	}
 }
 END {
-	#printf("Gender,Avg.Age,MaxAge,MinAge,Avg.AgeASY,Avg.AgeTA,Avg.MaxHR,Avg.Cholesterol,Avg.RestingBP,TotalWomen,TotalWomen_1,%Women_1")
+	#printf("Gender,Avg.Age,MaxAge,MinAge,Avg.AgeASY,Avg.AgeTA,Avg.MaxHR,Avg.Cholesterol,Avg.RestingBP,
+	# TotalWomen,TotalWomen_1,%Women_1")
 	
 	# Display results
 	printf "W,";

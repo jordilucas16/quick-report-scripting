@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 INPUT_1=results.csv
 
 if [[ -e "$INPUT_1" ]]; then
@@ -59,8 +58,9 @@ function create_table(){
 }
 # Insert headers into first row table
 function header(){
-	echo "<tr><th>Avg.Age</th><th>MaxAge</th><th>MinAge</th><th>Avg.AgeASY</th><th>Avg.AgeTA</th><th>Avg.MaxHR</th><th>Avg.Cholesterol</th>" \
-		 "<th>Avg.RestingBP</th><th>TotalPatients</th><th>TotalPatients_1</th><th>%Patients_1</th></tr>"
+	echo "<tr><th>Avg.Age</th><th>MaxAge</th><th>MinAge</th><th>Avg.AgeASY</th><th>Avg.AgeTA</th>" \
+	     "<th>Avg.MaxHR</th><th>Avg.Cholesterol</th>" \
+		   "<th>Avg.RestingBP</th><th>TotalPatients</th><th>TotalPatients_1</th><th>%Patients_1</th></tr>"
 }
 # Close a html row and table
 function end_table(){
