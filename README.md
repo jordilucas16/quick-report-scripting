@@ -27,7 +27,7 @@ After that you can see the generated report (results.html) in your browser.
 ![results_data_report](/results_report.png)
 
 ## Acknowledgments
-This project is inspired in a part of Scripting programming subject of Applied Data Science [UOC](https://www.uoc.edu/portal/es/index.html) University.
+This project is inspired in a part of Scripting programming subject of Applied Data Science ([UOC](https://www.uoc.edu/portal/es/index.html) University).
 
 
 
