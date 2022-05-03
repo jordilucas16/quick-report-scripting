@@ -23,6 +23,7 @@ You have to execute ./run.sh file in command line from application directory.
 `~/quick-report-scripting$ ./run.sh`
 
 After that you can see the generated report (results.html) in your browser.
+![results_data_report](/results_report.png)
 
 
 
