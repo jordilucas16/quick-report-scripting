@@ -1,4 +1,4 @@
-# quick-report-scripting project
+# Data report shell scripting pipeline
 ### Create a quick report by scripting with bash, awk, regex and sed.
 
 ![shell_scripting_etl](/shell_scripting_automate_etl.jpeg)
